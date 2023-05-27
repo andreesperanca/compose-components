@@ -18,7 +18,7 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             JetpackComponentsTheme {
-                    ExplorerScreen()
+                    ExplorerScreen(highlightGroups = highLightGroups)
             }
         }
     }

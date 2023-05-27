@@ -34,7 +34,6 @@ fun SearchViewSocrates(modifier: Modifier = Modifier) {
         leadingIcon = {
             Icon(imageVector = Icons.Default.Search, contentDescription = "")
         },
-        shape = ShapeDefaults.Large,
         colors = TextFieldDefaults.outlinedTextFieldColors(
             containerColor = androidx.compose.ui.graphics.Color.White,
             textColor = androidx.compose.ui.graphics.Color.Black
