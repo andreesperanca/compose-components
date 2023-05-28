@@ -8,10 +8,10 @@ data class HighlightGroup(
 )
 
 val highLightGroups = listOf(
-    HighlightGroup(image = R.drawable.ic_launcher_foreground, "Xoxo"),
-    HighlightGroup(image = R.drawable.ic_launcher_foreground, "Xoxo"),
-    HighlightGroup(image = R.drawable.ic_launcher_foreground, "Xoxo"),
-    HighlightGroup(image = R.drawable.ic_launcher_foreground, "Xoxo")
+    HighlightGroup(image = R.drawable.ic_launcher_background, "Xoxo"),
+    HighlightGroup(image = R.drawable.ic_launcher_background, "Xoxo"),
+    HighlightGroup(image = R.drawable.ic_launcher_background, "Xoxo"),
+    HighlightGroup(image = R.drawable.ic_launcher_background, "Xoxo")
 )
 
 
