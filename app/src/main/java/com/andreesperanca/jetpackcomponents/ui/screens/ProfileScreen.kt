@@ -14,6 +14,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.layout.wrapContentWidth
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.icons.Icons
@@ -96,7 +97,9 @@ fun ProfileScreen(
 
 
                 Row(modifier = Modifier
+                    .align(Alignment.CenterHorizontally)
                     .border(BorderStroke(1.dp, Color.LightGray))
+                    .wrapContentWidth(align = Alignment.CenterHorizontally)
                     .padding(all = 16.dp)
                 ) {
                     ProfileBox(title = "Wallet", value = "100")

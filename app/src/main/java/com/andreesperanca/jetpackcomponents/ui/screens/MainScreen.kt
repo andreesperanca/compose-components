@@ -1,6 +1,7 @@
 package com.andreesperanca.jetpackcomponents.ui.screens
 
 import android.annotation.SuppressLint
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.RowScope
 import androidx.compose.material.BottomNavigation
 import androidx.compose.material.BottomNavigationItem
@@ -8,10 +9,13 @@ import androidx.compose.material.ContentAlpha
 import androidx.compose.material.LocalContentColor
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.navigation.NavController
 import androidx.navigation.NavDestination
 import androidx.navigation.NavDestination.Companion.hierarchy
@@ -40,7 +44,8 @@ fun MainScreen() {
 fun BottomBar(navController: NavController) {
     val screens = listOf(
         BottomBarScreen.Explorer,
-        BottomBarScreen.Profile
+        BottomBarScreen.Profile,
+        BottomBarScreen.Message
     )
     val navBackStackEntry by navController.currentBackStackEntryAsState()
     val currentDestination = navBackStackEntry?.destination
@@ -60,8 +65,12 @@ fun RowScope.AddItem(
     navController: NavController
 ) {
     BottomNavigationItem(
-        label = { Text(text = screen.title) },
-        icon = { Icon(imageVector = screen.icon, contentDescription = "Navigation ${screen.title}") },
+        modifier = Modifier
+            .background(color = MaterialTheme.colorScheme.primary),
+        label = { Text(color = Color.White, text = screen.title) },
+        icon = {
+            val icon = screen.icon
+            Icon(imageVector = icon, contentDescription = "Navigation ${screen.title}", tint = Color.White) },
         selected = currentDestination?.hierarchy?.any {
             it.route == screen.route
         } == true,

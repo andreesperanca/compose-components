@@ -20,6 +20,7 @@ fun CommunityItem(modifier: Modifier = Modifier, image: Int, name: String, descr
     Column(
         modifier
             .padding(8.dp)
+
     ) {
         Image(
             modifier = Modifier

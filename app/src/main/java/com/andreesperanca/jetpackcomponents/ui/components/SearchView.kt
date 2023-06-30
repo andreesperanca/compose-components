@@ -7,7 +7,6 @@ import androidx.compose.material.icons.filled.Search
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.OutlinedTextField
-import androidx.compose.material3.ShapeDefaults
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextFieldDefaults
 import androidx.compose.runtime.Composable
@@ -20,16 +19,20 @@ import com.andreesperanca.jetpackcomponents.ui.theme.JetpackComponentsTheme
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun SearchViewSocrates(modifier: Modifier = Modifier) {
+fun searchViewSocrates(modifier: Modifier = Modifier): String {
     val text = remember { mutableStateOf("") }
     text.value
+    var search = text.value
 
     OutlinedTextField(
         modifier = modifier
             .padding(start = 8.dp, end = 8.dp, top = 32.dp, bottom = 32.dp)
             .fillMaxWidth(),
         value = text.value,
-        onValueChange = { text.value = "sad" },
+        onValueChange = {
+            text.value = it
+            search = it
+        },
         placeholder = { Text(text = "Olá, pesquise aqui", color = androidx.compose.ui.graphics.Color.Gray) },
         leadingIcon = {
             Icon(imageVector = Icons.Default.Search, contentDescription = "")
@@ -40,12 +43,13 @@ fun SearchViewSocrates(modifier: Modifier = Modifier) {
         ),
         maxLines = 1
     )
+    return search
 }
 
 @Composable
 @Preview(showBackground = true)
 fun SearchViewPreview() {
     JetpackComponentsTheme() {
-        SearchViewSocrates()
+        searchViewSocrates()
     }
 }

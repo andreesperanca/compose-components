@@ -6,6 +6,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import com.andreesperanca.jetpackcomponents.highLightGroups
 import com.andreesperanca.jetpackcomponents.ui.screens.ExplorerScreen
+import com.andreesperanca.jetpackcomponents.ui.screens.MessageScreen
 import com.andreesperanca.jetpackcomponents.ui.screens.ProfileScreen
 
 @Composable
@@ -19,6 +20,10 @@ fun BottomNavGraph(navController: NavHostController) {
 
         composable(route = BottomBarScreen.Profile.route) {
             ProfileScreen()
+        }
+
+        composable(route = BottomBarScreen.Message.route) {
+            MessageScreen()
         }
     }
 }
