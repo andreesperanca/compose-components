@@ -1,6 +1,7 @@
 package com.andreesperanca.jetpackcomponents.ui.components
 
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -14,6 +15,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -39,7 +41,9 @@ fun ConversationItem(
                 modifier = Modifier
                     .padding(8.dp)
                     .size(height = 48.dp, width = 48.dp)
-                    .clip(CircleShape),
+                    .clip(CircleShape)
+                    .border(width = 1.dp, color = Color(0xFFD4AF37), shape = CircleShape)
+                ,
                 painter = painterResource(id = userPhoto),
                 contentDescription = "User Image",
             )
@@ -55,6 +59,7 @@ fun ConversationItem(
 
                 Text(
                     text = lastMessage,
+                    color = Color(0xFF818685),
                     fontSize = 14.sp
                 )
             }
@@ -64,6 +69,7 @@ fun ConversationItem(
                 .align(Alignment.TopEnd)
                 .padding(8.dp),
             text = lastMessageTime,
+            color = Color(0xFF818685),
             fontSize = 10.sp
         )
 
@@ -76,7 +82,7 @@ fun ConversationItem(
     }
 }
 
-@Preview
+@Preview(showBackground = true)
 @Composable
 fun PreviewConversationItem() {
     JetpackComponentsTheme {

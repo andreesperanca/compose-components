@@ -10,10 +10,10 @@ data class HighlightGroup(
 )
 
 val highLightGroups = listOf(
-    HighlightGroup(image = R.drawable.ic_launcher_background, "Xoxo"),
-    HighlightGroup(image = R.drawable.ic_launcher_background, "Xoxo"),
-    HighlightGroup(image = R.drawable.ic_launcher_background, "Xoxo"),
-    HighlightGroup(image = R.drawable.ic_launcher_background, "Xoxo")
+    HighlightGroup(image = R.drawable.gray_background, "Xoxo"),
+    HighlightGroup(image = R.drawable.gray_background, "Xoxo"),
+    HighlightGroup(image = R.drawable.gray_background, "Xoxo"),
+    HighlightGroup(image = R.drawable.gray_background, "Xoxo")
 )
 
 
@@ -22,19 +22,19 @@ val conversations = listOf(
         userName = "André Esperança",
         lastMessage = "Olá bom dia",
         lastMessageTime = "Olá bom dia",
-        userPhoto = R.drawable.ic_launcher_background
+        userPhoto = R.drawable.gray_background
     ),
     Conversation(
         userName = "André Esperança",
         lastMessage = "Olá bom dia",
         lastMessageTime = "Olá bom dia",
-        userPhoto = R.drawable.ic_launcher_background
+        userPhoto = R.drawable.gray_background
     ),
     Conversation(
         userName = "André Esperança",
         lastMessage = "Olá bom dia",
         lastMessageTime = "2 horas atrás",
-        userPhoto = R.drawable.ic_launcher_background
+        userPhoto = R.drawable.gray_background
     )
 )
 

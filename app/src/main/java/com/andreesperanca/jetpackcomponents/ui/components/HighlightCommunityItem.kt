@@ -22,8 +22,8 @@ fun HighlightCommunityItem(image: Int, name: String) {
     Image(
         modifier = Modifier
             .fillMaxWidth()
-            .height(260.dp)
-            .padding(8.dp),
+            .height(200.dp)
+            .padding(horizontal = 16.dp),
         painter = painterResource(id = image),
         contentDescription = "ImageDescription",
         contentScale = ContentScale.Crop
@@ -31,9 +31,9 @@ fun HighlightCommunityItem(image: Int, name: String) {
 }
 
 @Composable
-@Preview
+@Preview(showBackground = true)
 fun PreviewHighlightCommunityItem() {
-    val image = R.drawable.ic_launcher_foreground
+    val image = R.drawable.gray_background
 
     HighlightCommunityItem(image = image, name = "Ola")
 

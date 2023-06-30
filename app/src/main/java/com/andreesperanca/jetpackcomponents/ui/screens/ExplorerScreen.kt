@@ -2,6 +2,7 @@ package com.andreesperanca.jetpackcomponents.ui.screens
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -23,6 +24,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -72,7 +74,7 @@ fun ExplorerScreen(
                 )
 
                 Text(
-                    modifier = Modifier.padding(top = 8.dp), text = "Encontre comunidades e pessoas\nque te ajudam a ir além", color = Color.White, fontSize = 13.sp
+                    modifier = Modifier.padding(top = 8.dp), text = "Encontre comunidades e pessoas\nque te ajudam a ir além", color = Color.White, fontSize = 15.sp
                 )
                 searchText = searchViewSocrates(modifier = Modifier)
             }
@@ -85,20 +87,23 @@ fun ExplorerScreen(
 
 
                 Text(
-                    modifier = Modifier.padding(start = 8.dp, top = 16.dp, bottom = 4.dp), text = "Comunidade destaque", fontWeight = FontWeight.Bold, fontSize = 18.sp
+                    modifier = Modifier.padding(start = 8.dp, top = 16.dp, bottom = 4.dp), text = "Comunidade destaque", fontWeight = FontWeight.Bold, fontSize = 18.sp,
+                    fontFamily = FontFamily.Monospace
                 )
 
                 HighlightCommunityItem(image = highlightGroups[0].image, name = highlightGroups[0].name)
 
                 Spacer(modifier = Modifier.size(16.dp))
 
-                Text(
-                    modifier = Modifier.padding(start = 8.dp, top = 16.dp, bottom = 4.dp), text = "Grupos oficias", fontWeight = FontWeight.Bold, fontSize = 18.sp
-                )
+                Text(modifier = Modifier.padding(start = 8.dp, top = 16.dp, bottom = 4.dp), text = "Grupos oficias", fontWeight = FontWeight.Bold, fontSize = 18.sp)
 
-                LazyRow() {
+                LazyRow(
+                    modifier = Modifier
+                        .padding(start = 8.dp),
+                    horizontalArrangement = Arrangement.spacedBy(8.dp)
+                ) {
                     items(highlightGroups) {
-                        CommunityItem(image = it.image, name = it.name, modifier = Modifier, description = "asdasd")
+                        CommunityItem(image = it.image, name = it.name, modifier = Modifier, description = "Lorem Ipsum")
                     }
                 }
 
@@ -106,7 +111,11 @@ fun ExplorerScreen(
                     modifier = Modifier.padding(start = 8.dp, top = 16.dp, bottom = 4.dp), text = "Comunidades recomendadas", fontWeight = FontWeight.Bold, fontSize = 18.sp
                 )
 
-                LazyRow(modifier = Modifier.padding(bottom = 16.dp)) {
+                LazyRow(
+                    modifier = Modifier
+                        .padding(start = 8.dp, bottom = 8.dp),
+                    horizontalArrangement = Arrangement.spacedBy(8.dp)
+                ) {
                     items(highlightGroups) {
                         CommunityItem(image = it.image, name = it.name, modifier = Modifier, description = "sdaidsad")
                     }
